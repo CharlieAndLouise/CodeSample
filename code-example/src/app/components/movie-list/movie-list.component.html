@@ -1,0 +1,5 @@
+<ul>
+  <li *ngFor="let movie of store.movies$ | async">{{ movie.name }}</li>
+</ul>
+
+<input type="button" value="Add Movie" (click)="addMovie()">
