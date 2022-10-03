@@ -24,6 +24,7 @@ export class MovieListStore extends ComponentStore<MovieListState> {
   }
 
   readonly movies$ = this.select(state => state.movies);
+  // Create promise for view to consume.
   readonly selectedMovie = this.select(state => {
     return state.movies.find(m => m.id === state.selectedMovieId);
   });

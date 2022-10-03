@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnInit, ViewEncapsulation } from '@angular/core';
-import { MovieListStore } from './moviej-list.store';
+import { MovieListStore } from './movie-list.store';
 
 @Component({
   selector: 'app-movie-list',
@@ -14,15 +14,17 @@ import { MovieListStore } from './moviej-list.store';
 export class MovieListComponent implements OnInit {
   store: MovieListStore;
 
-  constructor() { 
+  constructor() {
+    // Create the store for the component
     this.store = inject(MovieListStore);
-    console.log(this.store);
   }
 
   ngOnInit(): void {
   }
 
   addMovie() {
+    // When a change is triggered, call the pre-defined method to modify the store. 
+    // (ACTION in Redux)
     this.store.addMovie();
   }
 }
